@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Canvas"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:t="clr-namespace:InteractiveDataDisplay.WPF;assembly=InteractiveDataDisplay.WPF"
+        Title="HeatMap" Height="450" Width="800">
     <Grid>
-        
+        <t:Chart IsHorizontalNavigationEnabled="False"  IsVerticalNavigationEnabled="False" 
+                 
+                 IsEnabled="True" LegendVisibility="Hidden" Name="chart" >
+            <!-- 
+            在chart非轴上面滑轮是否变化对应轴
+            真个布局能否点击
+            -->
+            <Grid>
+            
+                <Grid>
+                    <t:HeatmapGraph Name="heatmap" />
+                </Grid>
+                <Grid>
+                    <Canvas Name="canvas" Background="Transparent"/>
+                </Grid>
+            </Grid>
+        </t:Chart>
+        <Button Click="Button_Click" HorizontalAlignment="Left" Height="81.16" VerticalAlignment="Top" Width="89.437">
+
+        </Button>
     </Grid>
 </Window>
